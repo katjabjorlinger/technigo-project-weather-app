@@ -15,6 +15,7 @@ const fetchStockholmWeather = () => {
 
 
         /* weather = "rain"  */
+        /* uncomment to test rain, clear, clouds */
       
         const sunriseUnix = data.city.sunrise;
         const sunsetUnix = data.city.sunset;
