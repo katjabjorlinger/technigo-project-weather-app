@@ -9,10 +9,13 @@ const fetchStockholmWeather = () => {
           return;
         }
         const current = data.list[0];
-        const weather = current.weather[0].main.toLowerCase()
-      
-        const messageElement = document.getElementById("stockholm-heading");
+        /* const weather = current.weather[0].main.toLowerCase() */
 
+        let weather = current.weather[0].main.toLowerCase();
+
+
+        /* weather = "rain"  */
+      
         const sunriseUnix = data.city.sunrise;
         const sunsetUnix = data.city.sunset;
 
@@ -29,28 +32,44 @@ const fetchStockholmWeather = () => {
             hour12: false
             });
 
-        let message = "";
+        const messageElement = document.getElementById("stockholm-heading");
+        /* let message = ""; */
   
         if (weather === "clear") {
-          message = "😎 Get your sunnies on. Stockholm is looking rather great today.";
+          messageElement.innerHTML = `
+          <i class="fa-solid fa-sun icon"></i> <p> Get your sunnies on! <br> Stockholm is looking rather great today.</p> 
+          `;
           document.getElementById("stockholm-heading").classList.add('sunny-text')
-          document.body.classList.add("sunny");
+          document.getElementById("weather-box").classList.add('sunny-text', 'capitalize')
+          document.getElementById("forecast").classList.add('sunny-text')
+          document.getElementById("app-container").classList.add('sunny')
 
         } else if (weather === "rain") {
-          message = "☔ Don't forget your umbrella. It’s wet in Stockholm today.";
+          messageElement.innerHTML =  `
+          <i class="fa-solid fa-umbrella icon"></i> <p> Don't forget your umbrella. <br> It’s wet in Stockholm today.</p> 
+          `;
           document.getElementById("stockholm-heading").classList.add('rainy-text')
-          document.body.classList.add("rainy");
+          document.getElementById("weather-box").classList.add('rainy-text' , 'capitalize')
+          document.getElementById("forecast").classList.add('rainy-text')
+          document.getElementById("app-container").classList.add('rainy')
 
         } else if (weather === "clouds") {
-          message = "☁️ Light a fire and get cosy. Stockholm is looking grey today.";
+          messageElement.innerHTML =  ` 
+          <i class="fas fa-cloud icon"></i>
+          <p>Don't let the grey get you down.<br>Stockholm is looking cloudy today.</p>
+        `;
           document.getElementById("stockholm-heading").classList.add('cloudy-text')
-          document.body.classList.add("cloudy");
+          document.getElementById("weather-box").classList.add('cloudy-text', 'capitalize')
+          document.getElementById("forecast").classList.add('cloudy-text')
+          document.getElementById("app-container").classList.add('cloudy')
 
         } else {
-          message = `The weather in Stockholm is currently: ${current.weather[0].description}.`;
+          messageElement.innerHTML = `
+          <p>The weather in Stockholm is currently: ${current.weather[0].description}. </p>
+          ` ;
         }
   
-        messageElement.textContent = message;
+        /* messageElement.textContent = message; */
         
         document.getElementById("description").textContent = current.weather[0].description;
         document.getElementById("temperature").textContent = current.main.temp + "°C";

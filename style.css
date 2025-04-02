@@ -1,12 +1,12 @@
 /* Bakgrundsfärger */
-.sunny { background-color: #fdf0b5; }      /* Ljusgul */
-.rainy { background-color: #cce9f9; }      /* Ljusblå */
-.cloudy { background-color: #fff5f5; }     /* Ljusrosa */
+.sunny { background-color: #F7E9B9 }      /* Ljusgul */
+.rainy { background-color: #BDE8FA }      /* Ljusblå */
+.cloudy { background-color:rgba(249, 253, 254, 1) }   
 
 /* Textfärger */
-.sunny-text { color: #2b4c1a; }            /* Mörkgrön */
-.rainy-text { color: #003253; }            /* Mörkblå */
-.cloudy-text { color: #e14545; }           /* Rödaktig */
+.sunny-text { color: #2A5510; }            /* Mörkgrön */
+.rainy-text { color: #164A68 }            /* Mörkblå */
+.cloudy-text { color: #F47775; }           /* Rödaktig */
 
 /* Dagar och temperatur */
 .day-temp {
@@ -15,8 +15,68 @@
   border-bottom: 1px dotted #aaa;
 }
 
-
-
-body {
-  padding: 2rem;
+.weather-box {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: fit-content;
 }
+
+.capitalize{
+text-transform: capitalize;
+}
+
+.weather-box .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.weather-box .row:last-child {
+  margin-bottom: 0;
+}
+
+
+.weather-message {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+}
+
+.icon {
+  font-size: 4rem;
+}
+
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px dotted #bbb;
+  font-size: 1rem;
+}
+
+.forecast-row:last-child {
+  border-bottom: none; /* ta bort sista raden */
+}
+
+.forecast-row span {
+  text-transform: low;
+}
+
+.app{
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  width: 375px; 
+  height: 812px; 
+  border: 16px solid #333;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  overflow: auto;
+  margin: 2rem auto;
+}
+
+
