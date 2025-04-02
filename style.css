@@ -1,3 +1,22 @@
+/* Bakgrundsfärger */
+.sunny { background-color: #fdf0b5; }      /* Ljusgul */
+.rainy { background-color: #cce9f9; }      /* Ljusblå */
+.cloudy { background-color: #fff5f5; }     /* Ljusrosa */
+
+/* Textfärger */
+.sunny-text { color: #2b4c1a; }            /* Mörkgrön */
+.rainy-text { color: #003253; }            /* Mörkblå */
+.cloudy-text { color: #e14545; }           /* Rödaktig */
+
+/* Dagar och temperatur */
+.day-temp {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #aaa;
+}
+
+
+
 body {
-  background: blue;
+  padding: 2rem;
 }
